@@ -40,11 +40,10 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(tatlar1){
+  var tatlar1 = orijinalTatlar;
+return tatlar1;
 }
-
-
 /* Görev 2:
 Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları kabul etmelidir:
    1. parametre olarak bir dizi
@@ -56,8 +55,14 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(orijinalTatlar){
+  var dizininBoyutu = orijinalTatlar.length;
+  if (dizininBoyutu == 25){
+    return true;
+  } else if (dizininBoyutu !== 25){
+    return false;
+  }
+  
 }
 
 
@@ -74,8 +79,9 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(orijinalTatlar){
+  orijinalTatlar.unshift("Kakule");
+  return orijinalTatlar;
 }
 
 
@@ -92,8 +98,10 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(orijinalTatlar){
+  orijinalTatlar.pop();
+  return orijinalTatlar;
+
 }
 
 
@@ -108,8 +116,9 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(orijinalTatlar, x){
+    var kullaniciyeVerilecek = orijinalTatlar[x];
+      return kullaniciyeVerilecek;
 }
 
 
@@ -128,8 +137,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(orijinalTatlar, birtat ){
+  var position = orijinalTatlar.indexOf(birtat);
+  orijinalTatlar.splice(position, 1);
+  return orijinalTatlar;
 }
 
 
@@ -154,8 +165,15 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(orijinalTatlar, birsecenek){
+  var filtreliUrunler = []
+for( var i = 0; i < orijinalTatlar.length; i++){
+  var malzeme = orijinalTatlar [i]
+  if ( malzeme.includes(birsecenek) == true){
+    filtreliUrunler.push(malzeme);
+  }
+} 
+  return filtreliUrunler;
 }
 
 
